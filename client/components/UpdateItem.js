@@ -63,7 +63,7 @@ const UpdateItem = () => {
   };
 
   if (user.role !== 'admin') {
-    return <Navigate to="/" />;
+    return <Navigate to="/items" />;
   }
   if (!item.id) {
     return <Navigate to="/items" />;
