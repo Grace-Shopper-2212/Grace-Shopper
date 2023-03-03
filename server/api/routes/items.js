@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {
   models: { Item },
 } = require('../../db');
+const { requireAdminToken } = require('../middleware');
 
 // GET /api/items/
 router.get('/', async (req, res, next) => {
@@ -35,7 +36,7 @@ router.get('/:itemId', async (req, res, next) => {
 });
 
 // POST /api/items/
-router.post('/', async (req, res, next) => {
+router.post('/', requireAdminToken, async (req, res, next) => {
   try {
     const newItem = await Item.create(req.body);
     res.status(201).json(newItem);
@@ -45,7 +46,7 @@ router.post('/', async (req, res, next) => {
 });
 
 // PUT /api/items/:itemId
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', requireAdminToken, async (req, res, next) => {
   try {
     const [numUpdated] = await Item.update(req.body, {
       where: { id: req.params.id },
@@ -62,7 +63,7 @@ router.put('/:id', async (req, res, next) => {
 });
 
 // DELETE /api/items/:itemId
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', requireAdminToken, async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.id);
     await item.destroy();

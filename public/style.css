@@ -65,6 +65,19 @@ form div {
   display: inline-block;
 }
 
+form div:last-child {
+  margin-bottom:0em;
+}
+
+.notif {
+  color: red;
+  margin-top: 0px;
+}
+
+button[type="submit"] {
+  display: block;
+}
+
 /*^^^^^^^^ Form ^^^^^^^^^^*/
 
 .main {

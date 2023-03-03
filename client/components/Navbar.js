@@ -16,7 +16,7 @@ const Navbar = () => {
           <div>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
-            <Link to="/items">All</Link>
+            <Link to="/items">Browse</Link>
             <Link to="/home">Costumes</Link>
             <Link to="/home">Supplies</Link>
             <Link to="/home">My Account</Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
           <div>
             {/* The navbar will show these links before you log in */}
             <Link to="/home">Home</Link>
-            <Link to="/items">All</Link>
+            <Link to="/items">Browse</Link>
             <Link to="/home">Costumes</Link>
             <Link to="/home">Supplies</Link>
             <Link to="/cart">Cart</Link>
